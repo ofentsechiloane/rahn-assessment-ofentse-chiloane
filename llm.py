@@ -6,7 +6,7 @@ from pydantic import ValidationError
 
 from models import Enquiry
 
-MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 SYSTEM_PROMPT = """You classify customer enquiries for a fitness studio.
 Return JSON only. Do NOT answer the customer and do NOT state any prices or times.
@@ -37,7 +37,7 @@ def _call_gemini(message: str) -> str:
             api_key=key, http_options=types.HttpOptions(timeout=15000)
         )
         response = client.models.generate_content(
-            model=MODEL,
+            model=os.getenv("GEMINI_MODEL", MODEL),
             contents=message,
             config=types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
