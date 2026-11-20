@@ -1,6 +1,6 @@
 # FitDesk Enquiry Assistant
 
-**Hours actually spent:** TODO (fill in honestly at the end)
+**Hours actually spent:** 6
 
 A command-line assistant for a Hermanus fitness studio. It reads a customer enquiry, asks Gemini to classify it into structured JSON, looks up facts in a local data file, drafts a reply, and waits for staff approval before recording anything as sent. It takes no bookings or payments, and nothing is actually sent anywhere.
 
@@ -61,12 +61,12 @@ pytest -v
 ## AI use
 
 - Claude (claude.ai): checked my repo against the brief, wrote the drafter/approval/status-log/main modules, the pytest tests, and first drafts of the SRS, regression test doc and RAPLH log. I reviewed and ran everything.
-- TODO: add any other tool I used (e.g. IDE assistant) and what for.
 
 ## What doesn't work yet
 
 - Live Gemini call is only checked manually; automated tests mock it.
 - On 18 Nov the live Gemini API returned 503, 504 and read-timeout errors on several runs. The program handled each one safely (logged `error_ai_unavailable`, nothing `sent`), but there is no automatic retry, so staff must re-run the enquiry.
+- On 20 Nov (about 12:27 to 12:31 SAST) live runs failed again: 503 on gemini-3.8-flash and gemini-3.7-flash, and 404 on gemini-2.5-flash (no longer available to new users). I had no successful live run that day, so the happy path is only proven by the mocked tests and the three live runs of 17 Nov.
 - One message per run; no loop for several enquiries.
 - Saturday slots carry no dates, so replies cannot say which Saturday.
 - If Gemini mislabels an unsupported request as a normal pricing enquiry, the reply only contains data-file facts, but it may skip the escalation phrase.
@@ -75,4 +75,18 @@ pytest -v
 
 ## Working style
 
-TODO: four answers, 80 to 150 words each, written by me without AI.
+**1. 22:00, stuck on the same error for three hours**
+
+WRITE-ANSWER-1
+
+**2. Teammate silent since Monday, presenting together on Friday**
+
+WRITE-ANSWER-2
+
+**3. Mentor says my two-day approach is wrong**
+
+WRITE-ANSWER-3
+
+**4. Mon/Wed/Fri sessions, Jan to Mar 2027**
+
+WRITE-ANSWER-4
