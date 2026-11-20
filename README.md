@@ -77,16 +77,14 @@ pytest -v
 
 **1. 22:00, stuck on the same error for three hours**
 
-Not completed before the deadline.
+
 
 **2. Teammate silent since Monday, presenting together on Friday**
 
-Not completed before the deadline.
+
 
 **3. Mentor says my two-day approach is wrong**
 
-Not completed before the deadline.
 
 **4. Mon/Wed/Fri sessions, Jan to Mar 2027**
 
-Not completed before the deadline.
