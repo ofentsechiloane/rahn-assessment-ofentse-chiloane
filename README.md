@@ -66,6 +66,7 @@ pytest -v
 ## What doesn't work yet
 
 - Live Gemini call is only checked manually; automated tests mock it.
+- On 18 Nov the live Gemini API returned 503, 504 and read-timeout errors on several runs. The program handled each one safely (logged `error_ai_unavailable`, nothing `sent`), but there is no automatic retry, so staff must re-run the enquiry.
 - One message per run; no loop for several enquiries.
 - Saturday slots carry no dates, so replies cannot say which Saturday.
 - If Gemini mislabels an unsupported request as a normal pricing enquiry, the reply only contains data-file facts, but it may skip the escalation phrase.
