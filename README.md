@@ -77,16 +77,16 @@ pytest -v
 
 **1. 22:00, stuck on the same error for three hours**
 
-WRITE-ANSWER-1
+Not completed before the deadline.
 
 **2. Teammate silent since Monday, presenting together on Friday**
 
-WRITE-ANSWER-2
+Not completed before the deadline.
 
 **3. Mentor says my two-day approach is wrong**
 
-WRITE-ANSWER-3
+Not completed before the deadline.
 
 **4. Mon/Wed/Fri sessions, Jan to Mar 2027**
 
-WRITE-ANSWER-4
+Not completed before the deadline.
